@@ -84,7 +84,7 @@ app.post("/list", jsonParser, async (req, res) =>
 {
     if (req.body != undefined)
     {
-        if ((req.body.product != undefined && req.body.amount != undefined) && ((req.body.unit != undefined && req.body.exp_price) && req.body.isbought != undefined))
+        if ((req.body.product != undefined && req.body.amount != undefined) && ((req.body.unit != undefined && req.body.exp_price != undefined) && req.body.isbought != undefined))
         {
             if ((req.body.product.length > 0 && parseInt(req.body.amount) > 0) && ((req.body.unit.length > 0 && parseInt(req.body.exp_price) > 0) && typeof(req.body.isbought) == "boolean"))
             {
@@ -148,7 +148,7 @@ app.put("/list", jsonParser, async (req, res) =>
     {
         if (req.body != undefined)
         {
-            if ((req.body.product != undefined && req.body.amount != undefined) && ((req.body.unit != undefined && req.body.exp_price) && req.body.isbought != undefined))
+            if ((req.body.product != undefined && req.body.amount != undefined) && ((req.body.unit != undefined && req.body.exp_price != undefined) && req.body.isbought != undefined))
             {
                 if ((req.body.product.length > 0 && parseInt(req.body.amount) > 0) && ((req.body.unit.length > 0 && parseInt(req.body.exp_price) > 0) && typeof(req.body.isbought) == "boolean"))
                 {
