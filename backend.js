@@ -34,7 +34,8 @@ app.get("/", (req, res) =>
 //GET (all) -- For test data: https://localhost:5555/lists?test=true --
 app.get("/lists", async (req, res) => 
 {
-    if (req.query.test == true)
+    console.log(req.query)
+    if (req.query.test == 'true')
     {
         res.status(200);
         res.send({product: "Test", amount: 1, unit: "db", exp_price: 111, isbought: true}).end();
@@ -45,6 +46,7 @@ app.get("/lists", async (req, res) =>
         {
             let query = await db.query("SELECT * FROM shoppinglist");
             res.status(200);
+            console.log(query[0]);
             res.send(query[0]);
         }
         catch (error)
@@ -188,6 +190,6 @@ app.put("/list", jsonParser, async (req, res) =>
     }
 })
 
-server.listen(5555, () => {
-    console.log("Backend up! Avaiable at: localhost:5555")
+server.listen(4444, () => {
+    console.log("Backend up! Avaiable at: localhost:4444")
 });
