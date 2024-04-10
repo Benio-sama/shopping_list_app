@@ -93,7 +93,7 @@ app.post("/list", jsonParser, async (req, res) =>
                 try
                 {
                     await db.query('INSERT INTO shoppinglist(product, amount, unit, exp_price, isbought) VALUES(?, ?, ?, ?, ?)', [req.body.product, req.body.amount, req.body.unit, req.body.exp_price, req.body.isbought]);
-                    res.sendStatus(200).end();
+                    res.send({"info": "Successful transaction"}).end();
                 }
                 catch (error)
                 {
@@ -128,7 +128,7 @@ app.delete("/list", async (req, res) =>
         try
         {
             await db.query('DELETE FROM shoppinglist WHERE id = ?', req.query.id);
-            res.sendStatus(200).end();
+            res.send({"info": "Successful transaction"}).end();
         }
         catch (error)
         {
@@ -157,7 +157,7 @@ app.put("/list", jsonParser, async (req, res) =>
                     try
                     {
                         await db.query('UPDATE shoppinglist SET product = ?, amount = ?, unit = ?, exp_price = ?, isbought = ? WHERE id = ?', [req.body.product, req.body.amount, req.body.unit, req.body.exp_price, req.body.isbought, req.query.id]);
-                        res.sendStatus(200).end();
+                        res.send({"info": "Successful transaction"}).end();
                     }
                     catch (error)
                     {
