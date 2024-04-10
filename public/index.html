@@ -9,17 +9,30 @@
 <body>
     <div>
         <label for="product"> Product name: </label><br>
-        <input type="text" id="product" placeholder="name"><br>
+        
         <label for="amount"> Amount: </label><br>
-        <input type="number" id="amount" placeholder="amount"><br>
+        
         <label for="unit"> Unit: </label><br>
-        <input type="text" id="unit" placeholder="unit"><br>
+        
         <label for="exp_price"> Expected price: </label><br>
-        <input type="number" id="exp_price" placeholder="price"><br>
-        <button id="add"> Add </button>
+       <br>
+        
     </div>
     <div>
-        <table id="list"></table>
+        <table id="list">
+           <tbody>
+            <tr>
+                <td><input type="text" id="product" placeholder="name"></td>
+                <td><input type="number" id="amount" placeholder="amount"></td>
+                <td><input type="text" id="unit" placeholder="unit"></td>
+                <td> <input type="number" id="exp_price" placeholder="price"></td>
+                <td colspan="2"><button id="add"> Add </button></td>
+            </tr>
+
+           </tbody>
+                
+            </tbody>
+        </table>
     </div>
     <script type="module" src="frontend.js"></script>
 </body>

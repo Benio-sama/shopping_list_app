@@ -73,6 +73,7 @@ function create_tr(element) {
 
     const tdp = document.createElement("td");
     tdp.textContent = element.product;
+    tdp.className="tdp";
     const tda = document.createElement("td");
     tda.textContent = element.amount;
     const tdu = document.createElement("td");
