@@ -95,8 +95,8 @@ function create_tr(element) {
     const tdb = document.createElement("td");
     const check = document.createElement("input");
     check.type = "checkbox";
-    if (element.isbought) {
-        check.checked;
+    if (element.isbought == 1) {
+        check.checked = true;
     }
     tdb.appendChild(check);
     const tdd = document.createElement("td");
@@ -110,21 +110,39 @@ function create_tr(element) {
     });
     check.addEventListener('change', async () => {
         try {
-            if (input.checked) {
-                const response = await fetch('http://localhost:4444/list?id=' + data.id, {
+            if (check.checked == true) {
+                console.log("asd");
+                const modified = {
+                    product: element.product,
+                    amount: amount,
+                    unit: unit,
+                    exp_price: exp_price,
+                    isbought: true,
+                    id: element.id
+                };
+                const response = await fetch("https://localhost:4444/list?id=" + element.id, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({})
+                    body: JSON.stringify(modified)
                 })
+                console.log( await response.text());
             } else {
-                const response = await fetch('http://localhost:3000/ajandekok/off/' + data.id, {
+                const modified = {
+                    product: product,
+                    amount: amount,
+                    unit: unit,
+                    exp_price: exp_price,
+                    isbought: false,
+                    id: element.id
+                };
+                const response = await fetch("https://localhost:4444/list?id=" + element.id, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({})
+                    body: JSON.stringify(modified)
                 })
             }
         } catch (error) {
