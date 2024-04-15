@@ -76,7 +76,7 @@ async function load() {
         });
         div.appendChild(table);
     } catch (error) {
-        console.error(error);
+        alert(error.message);
     }
 }
 
@@ -111,12 +111,11 @@ function create_tr(element) {
     check.addEventListener('change', async () => {
         try {
             if (check.checked == true) {
-                console.log("asd");
                 const modified = {
                     product: element.product,
-                    amount: amount,
-                    unit: unit,
-                    exp_price: exp_price,
+                    amount: element.amount,
+                    unit: element.unit,
+                    exp_price: element.exp_price,
                     isbought: true,
                     id: element.id
                 };
@@ -127,13 +126,12 @@ function create_tr(element) {
                     },
                     body: JSON.stringify(modified)
                 })
-                console.log( await response.text());
             } else {
                 const modified = {
-                    product: product,
-                    amount: amount,
-                    unit: unit,
-                    exp_price: exp_price,
+                    product: element.product,
+                    amount: element.amount,
+                    unit: element.nit,
+                    exp_price: element.exp_price,
                     isbought: false,
                     id: element.id
                 };
@@ -146,7 +144,7 @@ function create_tr(element) {
                 })
             }
         } catch (error) {
-            console.log(error.message);
+            alert(error.message);
         }
     });
     tdd.appendChild(remove);
