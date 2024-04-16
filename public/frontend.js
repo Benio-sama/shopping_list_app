@@ -71,6 +71,7 @@ async function load() {
         table.appendChild(the);
         table.appendChild(thb);
         table.appendChild(thd);
+        table.appendChild(thd);
         data.forEach(element => {
             table.appendChild(create_tr(element));
         });
