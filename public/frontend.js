@@ -71,6 +71,7 @@ async function load() {
         table.appendChild(the);
         table.appendChild(thb);
         table.appendChild(thd);
+        table.appendChild(thd);
         data.forEach(element => {
             table.appendChild(create_tr(element));
         });
@@ -86,6 +87,7 @@ function create_tr(element) {
 
     const tdp = document.createElement("td");
     tdp.textContent = element.product;
+    tdp.className="tdp";
     const tda = document.createElement("td");
     tda.textContent = element.amount;
     const tdu = document.createElement("td");
