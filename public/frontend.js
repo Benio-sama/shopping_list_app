@@ -4,24 +4,18 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     document.getElementById("add").addEventListener("click", async e => {
         e.preventDefault();
-        const product = document.getElementById("product").value;
-        const amount = document.getElementById("amount").valueAsNumber;
-        const unit = document.getElementById("unit").value;
-        const exp_price = document.getElementById("exp_price").valueAsNumber;
-
-        console.log(product);
-        console.log(amount);
-        console.log(unit);
-        console.log(exp_price);
-
-        const element = {
+        let product = document.getElementById("product").value;
+        let amount = document.getElementById("amount").valueAsNumber;
+        let unit = document.getElementById("unit").value;
+        let exp_price = document.getElementById("exp_price").valueAsNumber;
+        let element = {
             product: product,
             amount: amount,
             unit: unit,
             exp_price: exp_price,
             isbought: false
         }
-        const response = await fetch('https://localhost:4444/list', {
+        await fetch('https://localhost:4444/list', {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -29,9 +23,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             method: 'POST',
             body: JSON.stringify(element)
         });
-        const data = await response.json();
-        const div = document.getElementById("list");
-        div.appendChild(create_tr(data));
         clear_input("product");
         clear_input("amount");
         clear_input("unit");
@@ -47,23 +38,23 @@ function clear_input(id) {
 
 async function load() {
     try {
-        const response = await fetch("https://localhost:4444/lists");
-        const data = await response.json();
+        let response = await fetch("https://localhost:4444/lists");
+        let data = await response.json();
         console.log(data);
-        const div = document.getElementById("list");
-        const table = document.createElement("table");
+        let div = document.getElementById("list");
+        let table = document.createElement("table");
         table.id = "table";
-        const thp = document.createElement("th");
+        let thp = document.createElement("th");
         thp.textContent = "Product name";
-        const tha = document.createElement("th");
+        let tha = document.createElement("th");
         tha.textContent = "Amount";
-        const thu = document.createElement("th");
+        let thu = document.createElement("th");
         thu.textContent = "Unit";
-        const the = document.createElement("th");
+        let the = document.createElement("th");
         the.textContent = "Expected price";
-        const thb = document.createElement("th");
+        let thb = document.createElement("th");
         thb.textContent = "Bought?";
-        const thd = document.createElement("th");
+        let thd = document.createElement("th");
         thd.textContent = "Delete?";
         table.appendChild(thp);
         table.appendChild(tha);
