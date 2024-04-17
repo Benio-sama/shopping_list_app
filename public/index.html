@@ -7,33 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <table id="content">
-        <tbody>
-            <tr>
-                <td colspan="2"><p class="glow">Shoppinglist</p></td>
-            </tr>
-            <tr>
-                <td>
-                    <div>
-                        <label for="product"> Product name: </label><br>
-                        <input type="text" id="product" placeholder="name"><br><br>
-                        <label for="amount"> Amount: </label><br>
-                        <input type="number" id="amount" placeholder="amount"><br><br>
-                        <label for="unit"> Unit: </label><br>
-                        <input type="text" id="unit" placeholder="unit"><br><br>
-                        <label for="exp_price"> Expected price: </label><br>
-                        <input type="number" id="exp_price" placeholder="price"><br><br>
-                        <button id="add"> Add </button>
-                    </div>
-                </td>
-                <td>
-                     <div id="list">
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div>
+        <label for="product"> Product name: </label><br>
+        <input type="text" id="product" placeholder="name"><br>
+        <label for="amount"> Amount: </label><br>
+        <input type="number" id="amount" placeholder="amount"><br>
+        <label for="unit"> Unit: </label><br>
+        <input type="text" id="unit" placeholder="unit"><br>
+        <label for="exp_price"> Expected price: </label><br>
+        <input type="number" id="exp_price" placeholder="price"><br>
+        <button id="add"> Add </button>
+    </div>
+    <div>
+        <table id="list"></table>
+    </div>
     <script type="module" src="frontend.js"></script>
 </body>
 </html>
