@@ -123,7 +123,7 @@ function create_tr(element) {
                 const modified = {
                     product: element.product,
                     amount: element.amount,
-                    unit: element.nit,
+                    unit: element.unit,
                     exp_price: element.exp_price,
                     isbought: false,
                     id: element.id
