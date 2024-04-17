@@ -7,33 +7,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
-        <label for="product"> Product name: </label><br>
-        
-        <label for="amount"> Amount: </label><br>
-        
-        <label for="unit"> Unit: </label><br>
-        
-        <label for="exp_price"> Expected price: </label><br>
-       <br>
-        
-    </div>
-    <div>
-        <table id="list">
-           <tbody>
+    <table id="content">
+        <tbody>
             <tr>
-                <td><input type="text" id="product" placeholder="name"></td>
-                <td><input type="number" id="amount" placeholder="amount"></td>
-                <td><input type="text" id="unit" placeholder="unit"></td>
-                <td> <input type="number" id="exp_price" placeholder="price"></td>
-                <td colspan="2"><button id="add"> Add </button></td>
+                <td>
+                    <div>
+                        <label for="product"> Product name: </label><br>
+                        <input type="text" id="product" placeholder="name"><br><br>
+                        <label for="amount"> Amount: </label><br>
+                        <input type="number" id="amount" placeholder="amount"><br><br>
+                        <label for="unit"> Unit: </label><br>
+                        <input type="text" id="unit" placeholder="unit"><br><br>
+                        <label for="exp_price"> Expected price: </label><br>
+                        <input type="number" id="exp_price" placeholder="price"><br><br>
+                        <button id="add"> Add </button>
+                    </div>
+                </td>
+                <td>
+                     <div id="list">
+                    </div>
+                </td>
             </tr>
-
-           </tbody>
-                
-            </tbody>
-        </table>
-    </div>
+        </tbody>
+    </table>
     <script type="module" src="frontend.js"></script>
 </body>
 </html>

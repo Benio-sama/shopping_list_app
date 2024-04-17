@@ -1,8 +1,42 @@
 body{
-    background-color: rgb(230, 207, 228);
+    background-color: #f2d4f5;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 div{
     margin: auto;
     width:  fit-content;
+    border: 1px solid black;
+    padding: 2px;
+    border-radius: 5%;
+    background-color: #faedfc;
+}
+
+button{
+    
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    font-weight: 600;
+    color: rgb(72, 76, 122);
+    font-size: 14px;
+    padding: 4px 17px;
+    border-radius: 50px;
+    background-image: linear-gradient(180deg,#ffffff,#ffdcfa);
+    box-shadow: 0 4px 11px 0 rgb(37 44 97 / 15%), 0 1px 3px 0 rgb(93 100 148 / 20%);
+    transition: all .2s ease-out;
+    :hover{
+        box-shadow: 0 8px 22px 0 rgb(37 44 97 / 15%), 0 4px 6px 0 rgb(93 100 148 / 20%);
+    }
+    
+}
+
+#add{
+    margin: auto;
+}
+
+#content{
+    margin: auto;
+    border-radius: 5%;
 }
